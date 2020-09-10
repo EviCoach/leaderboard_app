@@ -1,12 +1,16 @@
 package com.columnhack.leaderboard.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 
 import com.columnhack.leaderboard.R;
 import com.columnhack.leaderboard.adapters.TabAdapter;
@@ -43,5 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager.setAdapter(mTabAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    public void startSubmitActivity(View view) {
+        startActivity(new Intent(MainActivity.this, SubmitActivity.class));
     }
 }
